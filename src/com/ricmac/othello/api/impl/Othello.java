@@ -10,17 +10,17 @@ import javax.ws.rs.core.MediaType;
 @Path("/a/")
 public class Othello {
 
+	private static final char[] othellomarker = {'r', 'y', 'e'};
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/getstring")
 	public String getEmployee() {
 		
-		return "{\"board\" :" + getRandomBoard() + " }";
-		//return "{\"board\" : \"rrwrerwyrryyyyyyyyrrrerrryyyyyyrr\"}";
+		return "{\"board\" : " + getRandomBoard() + " }";
 	}
 	
 	private String getRandomBoard() {
-		char[] othellomarker = {'r', 'y', 'e'};
 		String board = "\"";
 		for (int i = 0; i < 64; i++ ) {
 			board = board + othellomarker[new Random().nextInt(3)];
