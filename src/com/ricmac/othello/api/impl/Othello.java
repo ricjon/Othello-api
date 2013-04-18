@@ -19,7 +19,6 @@ public class Othello {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/getstring")
 	public String getEmployee() {
-		
 		return "{\"board\" : " + getRandomBoard() + " }";
 	}
 	
@@ -36,12 +35,12 @@ public class Othello {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/getBoard")
 	public String getBoard() {
-		return currentBoard;
+		return "{ \"board\" : " + "\"" + currentBoard + "\"" + " }";
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/setBoard")
+	@Path("/setBoard/{board}")
 	public void setBoard(@PathParam("board") @DefaultValue("") String board ) {
 		currentBoard = board;
 	}
