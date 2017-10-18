@@ -19,7 +19,7 @@ public class Othello {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/getstring")
+	@Path("/getrandomboard")
 	public String getEmployee() {
 		return "{\"board\" : " + getRandomBoard() + " }";
 	}
