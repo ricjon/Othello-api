@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 @Path("/a/")
 public class Othello {
 
-	private static final char[] othellomarker = {'r', 'y', 'e'};
+	private static final char[] OTHELLOMARKER = {'r', 'y', 'e'};
 	private static String currentBoard = "";
 	
 	@GET
@@ -27,7 +27,7 @@ public class Othello {
 	private String getRandomBoard() {
 		String board = "\"";
 		for (int i = 0; i < 64; i++ ) {
-			board = board + othellomarker[new Random().nextInt(3)];
+			board = board + OTHELLOMARKER[new Random().nextInt(3)];
 		}
 		board = board + "\"";
 		return board;
